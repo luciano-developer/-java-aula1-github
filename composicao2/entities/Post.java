@@ -1,0 +1,88 @@
+package entities;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class Post {
+	private Date moment;
+	private String title;
+	private String content;
+	private Integer likes;
+
+	private List<Comment> comments = new ArrayList<>();
+
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+	public Post() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Post(Date moment, String title, String content, Integer likes) {
+		this.moment = moment;
+		this.title = title;
+		this.content = content;
+		this.likes = likes;
+	}
+
+	public Date getMoment() {
+		return moment;
+	}
+
+	public void setMoment(Date moment) {
+		this.moment = moment;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Integer getLikes() {
+		return likes;
+	}
+
+	public void setLikes(Integer likes) {
+		this.likes = likes;
+	}
+
+	public void addComment(Comment com) {
+		comments.add(com);
+	}
+
+	public void removeComment(Comment com) {
+		comments.remove(com);
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(title + "\n");
+		builder.append(likes);
+		builder.append(" likes - ");
+		builder.append(sdf.format(moment) + "\n");
+		builder.append(content + "\n");
+		builder.append("Comentarios: \n");
+		for (Comment comment : comments) {
+			builder.append(comment.getText() + "\n");
+		}
+		return builder.toString();
+	}
+
+}
