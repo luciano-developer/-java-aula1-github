@@ -11,5 +11,6 @@
 	<classpathentry kind="src" path="composicao3"/>
 	<classpathentry kind="src" path="heranca"/>
 	<classpathentry kind="src" path="heranca2"/>
+	<classpathentry kind="src" path="heranca3"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
