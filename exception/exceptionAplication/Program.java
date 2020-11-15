@@ -36,16 +36,12 @@ public class Program {
 			System.out.print("Data de saida: ");
 			checkout = sdf.parse(sc.next());
 
-			Date now = new Date();
-			if (checkin.after(now) || checkout.after(now)) {
-				System.out.println("Erro na reserva: datas de reserva nao podem ser menor que a data corrente");
-			} else if (!checkout.after(checkin)) {
-				System.out.println("Erro na reserva: data de saida deve ser depois da data de entrada");
-			} else {
-
-				r.updateDates(checkin, checkout);
-				System.out.println(r.toString());
-			}
+			String error = r.updateDates(checkin, checkout);
+			if(error!=null)
+			System.out.println("Erro na reserva: " + error);	
+			else
+			System.out.println(r.toString());
+			
 		}
 		sc.close();
 	}
