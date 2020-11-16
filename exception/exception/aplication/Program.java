@@ -1,12 +1,12 @@
-package exceptionAplication;
+package exception.aplication;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import exceptionModel.entities.Reservation;
-import exceptionModel.exceptions.DomainException;
+import exception.model.entities.Reservation;
+import exception.model.exceptions.DomainException;
 
 public class Program {
 
